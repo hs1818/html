@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css1일차</title>
+</head>
+<body>
+    <!-- css 사용 3가지 -->
+    <!-- 1. inline 방식-->
+        <!-- html 태그에 style 속성을 입력 후 css를 입력하는 방식-->
+        <!-- 우선순위가 가장 높음-->
+        <!-- 많이사용x, 다른 html파일과 태그에서 재활용이 불가능-->
+    <!-- 2. html태그의 <head></head> 태그안에 <style></style>를 사용하여 css코드를 입력하는 방식-->
+        <!-- 현재 사용하고 있는 html파일 내에서만 동작핰(다른html재활용x)-->
+    <!-- 3. 외부 css파일 로드방식-->
+        <!-- 외부에 css파일을 미리 생성해놓고 link태그를 통해서 지정한 css파일을 로드하여 사용-->
+        <!-- 다른 html파일에서도 동일하게 로드하여 사용할 수 있음-->
+        <!-- link태그를 통해서 외부의 css파일을 로드-->
+        <!-- link태그를 통해서 다른서버의 css파일을 로드할 수 있음-->
+
+    <!-- css로드규칙-->    
+    <!-- html이 윗라인부터 한 라인씩 로드하여 실행하는 방식이기 때문에 css도 윗라인부터 아랫라인으로 한라인씩 로드하여 실행함-->
+    <!-- 윗라인과 아랫라인이 동일한 속성을 사용하였을 경우에 먼저 로딩된 윗라인의 속성이 무시되고 아랫라인의 속성이 적용됨-->
+    <!-- html에 inline방식으로 적용된 css는 가장 마지막에 적용된다-->
+    <!-- 윗라인과 아랫라인이 동일한 속성이 아닐경우 윗라인의 속성은 상속됨-->
+
+    <style>
+        /* 선택자 */
+        /* p { */
+            /* CSS 속성 : 속성값 */
+            /* text-align : center; */
+        /* } */
+    </style>
+
+    
+    <!-- 외부 CSS파일로드방식-->
+    <link rel="stylesheet" href="style.css">
+    <!-- html 파일내부 style방식-->
+    <style>
+        * {
+            margin: 5px; /* 테두리 외부영역 */
+        }
+        /* 하나의 선택자에 여러개의 CSS속성을 적용 가능함(대부분 이거사용) */
+        #p02 {
+            color: blue; font-size: 16px;
+        }
+        
+        /* 여러개의 선택자를 사용할 수 있음 */
+        h1 { color: chartreuse; }
+
+        /* 태그 선택자를 사용하여 section태그를 선택 */
+        section {
+            width: 500px;
+            padding: 15px;
+            border: 5px solid gray;
+        }
+    </style>
+
+
+</body>
+    <!-- inline방식-->
+    <p id="p01" style="color: red;">이름과, 때 하나에 사람들의 내린 내 경, 봅니다. 지나고 청춘이 써 차 까닭입니다.</p>
+    <!-- html 파일내부 style방식-->
+    <p id="p02">이름과, 때 하나에 사람들의 내린 내 경, 봅니다. 지나고 청춘이 써 차 까닭입니다.</p>
+    <!-- 외부 CSS파일로드방식-->
+    <p id="p03">이름과, 때 하나에 사람들의 내린 내 경, 봅니다. 지나고 청춘이 써 차 까닭입니다.</p>
+
+
+    <br><hr><br>
+
+    <div id="container">
+            <section>
+                <h2>Who am I?</h2>
+                <p>프런트엔드 웹 기술(Front-end Web Tech.)에 관심이 많습니다. <br>
+                현재 제주의 한 시골 마을에서 코딩 중입니다.</p>
+            </section>
+        
+        
+        <br><hr><br>
+
+        <article>
+            <h2>Who am I?</h2>
+                <p>프런트엔드 웹 기술(Front-end Web Tech.)에 관심이 많습니다. <br>
+                현재 제주의 한 시골 마을에서 코딩 중입니다.</p>
+        </article>
+
+        <h1>블루베리와 향산화 효능</h1>
+        <p style="color: blue;">블루베리는 항산화제인 ...</p>
+        <p>메사츄세츠 보스톤에...</p>
+    </div>
+
+
+    <br><hr><br>
+
+    <div>
+        <h2 id="h201">이름과, 때 하나에 사람들의 내린 내 경, 봅니다. 지나고 청춘이 써 차 까닭입니다</h2>
+        <h2 id="h202">봄이 청춘이 이 언덕 무덤 봅니다. 이름과, 마리아 걱정도 봄이 버리었습니다.</h2>
+        <h2 class="h2class">새워 너무나 가득 않은 잔디가 어머님, 못 청춘이 버리었습니다. 이름과, 이름과, 하나에 듯합니다.</h2>
+        <h2 class="h2class">이름과, 때 하나에 사람들의 내린 내 경, 봅니다. 지나고 청춘이 써 차 까닭입니다</h2>
+    </div>
+</html>
