@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 3일차</title>
+
+    <style>
+        /* text-shadow: 텍스트에 그림자 효과 추가 */
+        /* none, 가로값 세로값 번짐값 색상값  */
+        /* 가로 및 세로값을 양의 정수로 입력하면 왼쪽에서 오른쪽으로, 위에서 아래방향으로 그림자가 생성됨 */
+        /* 가로 및 세로값을 음의 정수로 입력하면 오른쪽에서 왼쪽으로, 아래에서 위 방향으로 그림자가 생성됨 */
+        #div01 > .shadow1 {
+            color: rgb(225, 165,0);
+            text-shadow: 1px 1px;
+        }
+        #div01 > .shadow2 {
+            text-shadow: 5px 5px 3px #ff0000;
+        }
+        #div01 > .shadow3 {
+            color: hsl(0, 0%, 100%);
+            text-shadow: 7px -7px 5px black;
+        }
+        /*  그림자 값을 여러개를 동시에 사용할 수 있음*/   
+        #div01 > .shadow4 {
+            color: #000000;
+            text-shadow: 0px 0px  4px #cccccc, 0 -5px 4px #ffff33, 2px -10px 6px #ffdd33, 
+            -2px -15px 11px #ff8800, 2px -19px 18px #ff2200;
+        }
+        /* -&nbsp; 안하려면 이거 사용- */
+        /* p223) white-space: 텍스트의 공백을 어떻게 처리할지 방법을 설정하는 css속성 */
+        /* normal(기본값), nowrap, pre, pre-line, pre-wrap */
+        /* nowrap: 여러개의 공백을 하나로 표시, 영역 너비를 넘어갈 경우 줄바꿈을 하지않고 한줄로 표시 */
+        /* normal: 여러개의 공백을 하나로 표시 */
+        /* pre: 여러개의 공백을 그대로 표시, 영역 너비를 넘어갈 경우 줄바꿈을 하지않고 한줄로 표시 */
+        /* pre-line: 여러개의 공백을 하나로 표시, 영역 너비를 넘어갈 경우 줄바꿈 */
+        /* pre-wrap: 여러개의 공백을 그대로 표시, 영역 너비를 넘어갈 경우 줄바꿈 */       
+        #div02 > p.spacea { white-space: nowrap; }
+        #div02 > p.spaceb { white-space: normal;}
+        #div02 > p.spacec { white-space: pre; } /*한줄 띄우고 들여쓰기 그대로 표시됨*/
+        #div02 > p.spaced { white-space: pre-line; }
+        #div02 > p.spacee { white-space: pre-wrap; }    
+        
+        /* letter-spacing: 글자 사이 간격을 설정하는 css속성 */
+        /* word-spacing: 각 단어 사이의 간격을 설정함 */
+        /* normal(기본값- 0px), 양의 정수값 및 음의 정수값 입력 */
+        #div03 > .letter1{ letter-spacing: normal;}
+        #div03 > .letter2{ letter-spacing: -5px;}
+        #div03 > .word1{ word-spacing: normal;}
+        #div03 > .word2{ word-spacing: 10px;}
+
+        /* direction: 글자 쓰기 방향 지정하기 */
+        /* ltr(left-to-rignt)(기본값). rtl */
+        #div04 > .ltr { direction: ltr; }
+        #div04 > .rtl { direction: rtl; }
+
+        /* test-align: 텍스트(글자)의 정렬 방향설정 */
+        /* start, end, left, right, center, justify, match-parent */
+        /* start: direction에 따라 ltr이면 왼쪽정렬, rtl이면 오른쪽정렬 ->시작 위치에 따라 문단정렬 */
+        /* end: start의 반대로 생각 */
+        /* justify: 양쪽정렬  */
+        /* match-parent: 부모 태그의 정렬방식 상속받아 사용 */
+        #div05 > .left { text-align: left; }
+        #div05 > .right { text-align: right; }
+        #div05 > .center { text-align: center; }
+        #div05 > .justify { text-align: justify; }
+
+        /* text-justify: test-align속성값을 justify로 했을 경우 텍스트와 단어 사이 간격을 설정 */
+        /* auto, non, inter-word, distribute  */
+        /* auto: 웹에서 자동으로 지정 */
+        /* inter-word: 단어 사이 공백 정렬 */
+        /* distribute: 글자 사이 공백 똑같이 맞춰서 정렬 */
+        #div06 > .auto, #div06 > .interword, #div06 > .distribute {
+            text-align: justify;
+        }
+        #div06 > .auto {
+            text-justify: auto;
+        }
+        #div06 > .interword {
+            text-justify: inter-word;
+        }
+        #div06 > .distribute {
+            text-justify: distribute;
+        }
+
+        /* text-indent: 문단의 첫 글자를 얼마나 들여쓸지 설정 */
+        /* 정수 입력 및 %로 입력 */
+        #div07 > .indent1 { text-indent: 15px; }
+        #div07 > .indent2 { text-indent: 5%; }
+
+        /* line-height: 줄 간격 조절  - 자주사용 */
+        /* normal(기본값), 정수/백분율, inherit(부모태그에서 상속) */
+        #div08 > .small { line-height: 0.7;}
+        #div08 > .big { line-height: 2;}
+
+        /* text-overflow: 공간태그 사용 시 텍스트가 해당 영역을 벗어날 경우 화면에 출력하는 방식을 설정 */
+        /* clip: 영역을 넘어갈 경우 글자를 화면에서 자름 */
+        /* ellipsis: 말 줄임표로 잘린 텍스트가 있다고 표시 */
+        /* white-space설정이 nowrap로 되어있고 overflow설정이 hidden일 경우에 사용할 수 있음 */
+        #div09 > .content {
+            border: 2px solid #ff0202;
+            width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #div09 > .content:hover { overflow: visible; }
+    </style>
+
+
+</head>
+
+
+<body>
+    <div id="div01">
+        <h1 class="shadow1">html5</h1>
+        <h1 class="shadow2">html5</h1>
+        <h1 class="shadow3">html5</h1>
+        <h1 class="shadow4">html5</h1>
+    </div>
+    <hr>
+
+    <div id="div02">
+        <h3>white-space속성</h3>
+        <h4>whice-space: nowrap</h4>
+        <p class="spacea">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+        <h4>whice-space: normal</h4>
+        <p class="spaceb">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+        <h4>whice-space: pre</h4>
+        <p class="spacec">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+        <h4>whice-space: pre-line</h4>
+        <p class="spaced">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+        <h4>whice-space: pre-wrap</h4>
+        <p class="spacee">
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+            this is some text. this is some text. this is some text.
+        </p>
+    </div>
+    <hr>
+
+    <div id="div03">
+        <h3>letter-spacing속성</h3>
+        <h3 class="letter1">html5</h3>
+        <h3 class="letter2">html5</h3>
+        <br>
+        <h3>world-spacing속성</h3>
+        <h3 class="word1">html css javascript</h3>
+        <h3 class="word2">html css javascript</h3>
+    </div>
+    <hr>
+
+    <div id="div04">
+        <h3>direction속성</h3>
+        <p class="ltr">direction을 ltr로 설정하여 글자출력</p>
+        <input type="text" class="ltr">
+        <p class="rtl">direction을 rtl로 설정하여 글자출력</p>
+        <input type="text" class="rtl">
+    </div>
+    <hr>
+
+    <div id="div05">
+        <h3>text-align속성</h3>
+        <p class="left">Integer elementum massa at nulla placerat varius... .</p>
+        <p class="right">Integer elementum massa at nulla placerat varius... .</p>
+        <p class="center">Integer elementum massa at nulla placerat varius... .</p>
+        <p class="justify">Integer elementum massa at nulla placerat varius... .</p>
+    </div>
+    <hr>
+
+    <div id="div06">
+        <h3>text-justify속성</h3>
+        <p class="auto">Integer elementum massa at nulla placerat varius... .</p>
+        <p class="interword">Integer elementum massa at nulla placerat varius... .</p>
+        <p class="distribute">Integer elementum massa at nulla placerat varius... .</p>
+    </div>
+    <hr>
+
+    <div id="div07">
+        <h3>text-indent속성</h3>
+        <p>Integer elementum massa at nulla placerat varius... .</p>
+        <p class="indent1">Integer elementum massa at nulla placerat varius... .</p>
+        <p class="indent2">Integer elementum massa at nulla placerat varius... .</p>
+    </div>
+    <hr>
+
+    <div id="div08">
+        <h3>line-height속성</h3>
+        <p class="small">따뜻한 부패를 원대하고, 청춘의 설레는 인간의 힘있다. 위하여, 원질이 되는 눈에 그들의 이상, 
+            되려니와, 품에 봄바람이다. 그들의 군영과 새 같이 붙잡아 황금시대를 그러므로 약동하다. 
+            보배를 꽃이 사라지지 들어 물방아 못하다 원대하고, 말이다. 살 인간의 뛰노는 크고 청춘 생명을 우는 힘있다.</p>
+        <p class="big">따뜻한 부패를 원대하고, 청춘의 설레는 인간의 힘있다. 위하여, 원질이 되는 눈에 그들의 이상, 
+            되려니와, 품에 봄바람이다. 그들의 군영과 새 같이 붙잡아 황금시대를 그러므로 약동하다. 
+            보배를 꽃이 사라지지 들어 물방아 못하다 원대하고, 말이다. 살 인간의 뛰노는 크고 청춘 생명을 우는 힘있다.</p>    
+    </div>
+    <hr>
+
+    <div id="div09">
+        <h3>text-overflow속성</h3>
+        <p class="content">따뜻한 부패를 원대하고, 청춘의 설레는 인간의 힘있다. 위하여, 원질이 되는 눈에 그들의 이상, 
+            되려니와, 품에 봄바람이다. 그들의 군영과 새 같이 붙잡아 황금시대를 그러므로 약동하다. 
+            보배를 꽃이 사라지지 들어 물방아 못하다 원대하고, 말이다. 살 인간의 뛰노는 크고 청춘 생명을 우는 힘있다.</p>
+    </div>
+</html>
