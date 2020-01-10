@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css4일차</title>
+
+    <style>
+        /* css에서 색상표현 방법 2-3참고 colorpicker.com 참고*/ 
+        /* hex표기법 - 이거랑*/
+        /* rgb표기법 - 이거랑*/
+        /* rgba표기법 */
+        /* hsl표기법 */
+        /* hsla표기법 */
+        /* 미리 정해놓은 색상명(140) 표기법 */
+        /* 자주 사용하는 색상명을 입력하여 색상표기법 */
+        #div01 { 
+            background-color:  #222222;
+            margin: 20px;
+            }
+        #div01 .text1 { color: rgb(255, 255, 255 );}
+        #div01 .text2 { color: rgba(255, 255, 255, 0.8 );}
+        #div01 .text3 { color: rgba(255, 255, 255, 0.5 );}
+        #div01 .text4 { color: rgba(255, 255, 255, 0.2 );}
+
+        /* background-color: 지정한 태그 배경색 설정 */
+        /* 색상명 표기법, hex, rgb, hsl,표기법 모두 사용가능 */
+        /*  p260) background-color(원래 투명)속성은 자식태그에게 상속x !! ex) body는 하위안고치면 다적용되는데 */
+        #div02 {
+            height: 300px;
+            background-color: #0094ff;
+        }
+        #div02 > div {  /*자식이라 id값 안쳐도 찾음 */
+            background-color: white;
+            width: 90%;
+            padding: 15px;
+            border: 2px solid black;
+        }
+        #div02 p {
+            line-height: 30px;
+        }
+
+        /* p262) background-clip: 배경속성 적용범위를 설정하는 css속성 */
+        /* p294나중에설명 box모델) 배경속성의 적용범위를 box model의 어느 부분까지 적용할것인지 설정하는 css속성 */
+        /* border-box(기본값), padding-box, content-box */
+        #div03-1, #div03-2, #div03-3 { 
+            background-color:blueviolet;
+            height: 100px;
+            width: 400px;
+            border: 10px dashed black;
+            margin: 10px;
+            padding: 20px;
+        }
+        #div03-1 { background-clip: border-box; }
+        #div03-2 { background-clip: padding-box; }
+        #div03-3 { background-clip: content-box; }
+        
+        /* background-image: 배경에 색상을 사용x 이미지를 넣어주는것 */
+        /* url()을 사용하여 이미지의 전체경로를 입력 */
+        #div04 {
+            height: 1000px; /* div아무것도 아닌공간이라 0px하면 암것도 안나와서 1000함 */
+            background-image: url("./images/002.jpg");
+        }
+
+        /* background-repeat: background-image속성 사용했을 경우 이미지가 배경의 크기보다 작을 때 
+        배경 이미지를 반복하여 그릴 것인지를 설정하는 css속성 */
+        /* repeat(기본값), repeat-x(x축으로 반복), repeat-y, no-repeat */
+        #div05, #div06, #div07 {
+            height: 500px;
+            width: 700px;
+            background-image: url("./images/003.jpg");
+            margin: 20px;
+            border: 2px solid black;
+        }
+        #div05 {background-repeat: repeat-x;}
+        #div06 {background-repeat: repeat-y;}
+        #div07 {background-repeat: no-repeat;}
+
+        /* background-size: background-image를 사용할 경우 배경이미지 크기 조절 */
+        /* auto(기본값), contain, cover, 크기(x축px, y축px), 백분율(x축%, y축%) */
+        /* contain: 배경요소에 맞게 이미지를 확대/축소, 배경보다 이미지가 작음 */
+        /* cover: 배경요소를 모두 덮도록 이미지를 확대/축소, 배경보다 이미지가 큼 */
+        /* 크기(x,y): 배경 크기를 px값으로 x축, y축을 모두입력, 이미지 배율유지x, 숫자 하나만 입력 시 나머지는 자동 */
+        /* 백분율(x y): 배경 크기를 %값으로 x축, y축을 모두입력, 이미지 배율유지x, 숫자 하나만 입력 시 나머지는 자동 */
+        #div08-1, #div08-2, #div08-3, #div08-4, #div08-5 {
+            height: 400px;
+            width: 500px;
+            background-image: url("./images/003.jpg");
+            background-repeat: no-repeat;
+            border: 1px solid black;
+        }
+        #div08-1 { background-size: auto; }
+        #div08-2 { background-size: contain; }
+        #div08-3 { background-size: cover; }
+        #div08-4 { background-size: 300px, 250px; }
+        #div08-5 { background-size: 40% 70%; }
+
+        /* background-position 잘안씀: background-image속성을 사용하고 background-repeat속성을 no-repeat으로 설정했을 경우
+        배경 이미지가 그려질 위치를 설정하는 css속성 */
+        /* 위치 속성값은 x축, y축 2개를 입력 */
+        /* left, right, top, bottom, center, 위치값(px), 백분율(%) */
+        #div09 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            background-image: url("./images/004.jpg");
+            background-repeat: no-repeat;
+            background-position: center 10px; /* left top이 기본값 */
+        }
+
+        /* background-origin(clip이랑 비슷) 걍 요런게 이따ㅇㅇ: background-image속성을 사용할 경우 
+        배경이미지가 그려질 기준을 box model기준을 설정하는 css속성 */
+        /* border-box, padding-box(기본값), content-box */
+        #div10-1, #div10-2, #div10-3 {
+            width: 300px;
+            height: 300px;
+            border: 20px dashed rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            padding: 20px;
+            background-image: url("./images/004.jpg");
+            background-repeat: no-repeat;
+        }
+        #div10-1 { background-origin: border-box;}
+        #div10-2 { background-origin: padding-box;}
+        #div10-3 { background-origin: content-box;}
+
+        /* background-attachment: background-image속성을 사용했을 경우 화면을 스크롤 시 
+        배경 이미지를 고정하도록 설정하는 css속성 */
+        /* scroll{기본값}, fixed(배경화면 고정) */
+        #div11 {
+            border: 2px solid black;
+            background-image: url("./images/005.jpg");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-attachment: fixed;
+        }
+
+        /* background: 배경관련 속성들을 한번에 설정하는 css속성 */
+        /* background-image, repeat, attachment, position, clip, origin, size */
+        /* 해당 속성값 미입력 시 기본값으로 입력됨  */
+        
+    </style>
+
+
+</head>
+<body>
+
+    <div id="div01">
+        <h1 class="text1">html +css3</h1>
+        <h1 class="text2">html +css3</h1>
+        <h1 class="text3">html +css3</h1>
+        <h1 class="text4">html +css3</h1>
+        
+    </div>
+    <hr>
+
+    <div id="div02">
+        <div id="div02-2">
+            <h1>초콜릿(Chocolate)</h1>
+            <p>초콜릿은 카카오 콩을 기용한 식품이다.</p>
+            <p>숙성한 카카오 콩을 볶은..</p>
+        </div>
+    </div>
+    <hr>
+
+    <div id="div03">
+        <div id="div03-1">
+            <p>투명하되 이것은 힘차게 위하여서. 있는 불러 산야에 눈이 풍부하게 이것을 것이다. 
+                그들의 어디 없는 따뜻한 가치를 말이다.</p>
+        </div>
+        <div id="div03-2">
+            <p>투명하되 이것은 힘차게 위하여서. 있는 불러 산야에 눈이 풍부하게 이것을 것이다.
+                 그들의 어디 없는 따뜻한 가치를 말이다.</p>
+        </div>
+        <div id="div03-3">
+            <p>투명하되 이것은 힘차게 위하여서. 있는 불러 산야에 눈이 풍부하게 이것을 것이다.
+                 그들의 어디 없는 따뜻한 가치를 말이다.</p>
+        </div>
+    </div>
+    <hr>
+
+    <div id="div04">
+        <div>
+
+        </div>
+    </div>
+    <hr>
+  
+    <div id="div05"></div>
+    <div id="div06"></div>
+    <div id="div07"></div>
+    <hr>
+
+    <div id="div08">
+        <div id="div08-1"></div>
+        <div id="div08-2"></div>
+        <div id="div08-3"></div>
+        <div id="div08-4"></div>
+        <div id="div08-5"></div>
+    </div>
+    <hr>
+
+    <div id="div09"></div>
+    <hr>
+
+    <div id="div10-1"></div>
+    <div id="div10-2"></div>
+    <div id="div10-3"></div>
+    <hr>
+
+    <div id="div11">
+        <p>background-attachment속성</p>
+        <p>background-attachment속성</p>
+        <p>background-attachment속성</p>
+        <p>background-attachment속성</p>
+        <p>background-attachment속성</p>
+        <p>background-attachment속성</p>
+        <p>background-attachment속성</p>
+        <p>background-attachment속성</p>
+        <p>background-attachment속성</p> 
+        <p>background-attachment속성</p> 
+        <p>background-attachment속성</p>     
+        <p>background-attachment속성</p> 
+        <p>background-attachment속성</p> 
+        <p>background-attachment속성</p> 
+    </div>
+    <hr>
+
+
+</body>
+</html>
