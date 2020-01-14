@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 3번쨰</title>
+
+    <style>
+        div {
+            border: 3px solid red;
+            padding: 5px;
+        }
+        #img01 { float: left;}
+        
+        /* float사용 시 부모태그 영역을 벗어나는 상황이 발생되는데 이것을 막는 방법 2가지 */
+        /* 1. 부모태그에 overflow: auto를 사용 */
+        /* 2. 부모태그에 ::after를 추가하여 화면에 그려진 이후 동작을 설정하는 방법 (-2번방법 추천) */
+            /* clear:both, display:table, content:""속성을 사용해야함  */
+        #div02 {
+            /* overflow: 영역을 벗어나는 컨텐츠의 화면출력방식을 설정하는 css속성 */
+            overflow: auto; /*화면크기에 맞춰줌 */
+        }
+        #img02 { float: left;}
+
+        /* 세번쨰 */
+        #img03 {float: left;}
+        #div03::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <p>대통령은 법률이 정하는 바에 의하여 사면·감형 또는 복권을 명할 수 있다.</p>
+        <img src="./images/005.jpg" alt="" id="img01">
+        <p>대통령은 제4항과 제5항의 규정에 의하여 확정된 법률을 지체없이 공포하여야 한다.
+        제5항에 의하여 법률이 확정된 후 또는 제4항에 의한 확정법률이 정부에 이송된 후
+        5일 이내에 대통령이 공포하지 아니할 때에는 국회의장이 이를 공포한다.</p>
+    </div>
+
+    <br><br><br><br><br><br><hr>
+
+    <div id="div02">
+        <p>대통령은 법률이 정하는 바에 의하여 사면·감형 또는 복권을 명할 수 있다.</p>
+        <img src="./images/005.jpg" alt="" id="img02">
+        <p>대통령은 제4항과 제5항의 규정에 의하여 확정된 법률을 지체없이 공포하여야 한다.
+        제5항에 의하여 법률이 확정된 후 또는 제4항에 의한 확정법률이 정부에 이송된 후
+        5일 이내에 대통령이 공포하지 아니할 때에는 국회의장이 이를 공포한다.</p>
+    </div>
+<br><hr>
+
+    <div id="div03">
+        <p>대통령은 법률이 정하는 바에 의하여 사면·감형 또는 복권을 명할 수 있다.</p>
+        <img src="./images/005.jpg" alt="" id="img03">
+        <p>대통령은 제4항과 제5항의 규정에 의하여 확정된 법률을 지체없이 공포하여야 한다.
+        제5항에 의하여 법률이 확정된 후 또는 제4항에 의한 확정법률이 정부에 이송된 후
+        5일 이내에 대통령이 공포하지 아니할 때에는 국회의장이 이를 공포한다.</p>
+    </div>
+
+</body>
+</html>

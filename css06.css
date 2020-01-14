@@ -1,0 +1,39 @@
+/* css06.html파일 링크 */
+div { border: 1px solid #cccccc;}
+
+#container {
+    width: 960px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#header {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#leftsidebar {
+    width: 150px;
+    padding: 20px;
+    margin-right: 20px;         /*메인컨텐츠랑 거리 */
+    margin-bottom: 20px;
+    float: left;
+}
+#rightsidebar {      /*content 620px에서 양쪽 사이드바 하게되면 뺴고 해야함 */
+    width: 150px;
+    padding: 20px;
+    margin-left: 20px;         
+    margin-bottom: 20px;
+    float: right;
+}
+
+#contents {
+    width: 490px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;    /*여기 float 안하면 나중에 크기 변하면 화면 틀어짐 */
+}
+
+#footer {
+    padding: 20px;
+    clear: both;
+}

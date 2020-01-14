@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 6일차 2번쨰연습</title>
+
+    <style>
+        #div01 > div { box-sizing: border-box; }
+        #div01 > .box {
+            width: 33%;  /* % 하면 박스 크기 유지됨*/
+            padding: 50px;
+            float: left;
+        }
+        #div01 > .box1 { background-color: #bbbbbb; }
+        #div01 > .box2 { background-color: #cccccc; }
+        #div01 > .box3 { background-color: #dddddd; }
+
+        /* 문1) 예제를 기반으로 화면 레이아웃을 헤더, 메인컨텐츠, 사이드바, 푸터 인 화면과 
+        헤더, 왼쪽사이드바, 메인컨텐츠, 오른쪽사이드바, 푸터 인 화면 2개를 생성하싱 */
+        /* 2단화면은 사이드바 위치 상관x */
+        /* 사이드바 크기가 20%를 넘지 않도록 해야함 */
+        div {border: 1px solid #cccccc;}
+        #div01 {
+            width: 800px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+        #header {
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        #div01 > .box1 {
+            background-color: white;
+            width: 620px;
+            height: 500px;
+            margin-bottom: 20px;
+        }
+
+        #div01 > .box2 {
+            float: right;
+            width: 19%;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: white;
+        }
+        #div01 > .box3 {
+            clear: both;
+            width: 800px;
+            background-color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div id="header">
+            <h1>사이트제목</h1>
+        </div>
+        <!-- class는 값을 여러개 가질 수 있음 -->
+        <!-- class값이 여러개일 경우 여러 class의 속성을 모두 사용함 -->
+        <!-- css속성 box갖고가고 box1갖고가고 -->
+        <div class="box box1">
+            <h2>본문</h2>
+            <p>국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며, 국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금 출석·답변하게 할 수 있다. 대법원과 각급법원의 조직은 법률로 정한다. 중앙선거관리위원회는 대통령이 임명하는 3인, 국회에서 선출하는 3인과 대법원장이 지명하는 3인의 위원으로 구성한다. 위원장은 위원중에서 호선한다.</p>
+
+            <p>헌법재판소 재판관은 정당에 가입하거나 정치에 관여할 수 없다. 국회의원의 선거구와 비례대표제 기타 선거에 관한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다. 대한민국은 통일을 지향하며, 자유민주적 기본질서에 입각한 평화적 통일 정책을 수립하고 이를 추진한다.</p>
+
+        </div>
+        <div class="box box2">
+            <h2>사이드바</h2>
+            <ul>
+                <li>목록1</li>
+                <li>목록2</li>
+                <li>목록3</li>
+                <li>목록4</li>       
+            </ul>
+        </div>
+        <div class="box3">
+            <h2>푸터</h2>
+            <p>선거에 있어서 최고득표자가 2인 이상인 때에는 국회의 재적의원 과반수가 출석한 공개회의에서 다수표를 얻은 자를 당선자로 한다.</p>
+        </div>
+    </div>
+</body>
+</html>

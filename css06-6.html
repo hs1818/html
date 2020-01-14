@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css6일차 p345</title>
+
+    <style>
+        /* visibility: html태그를 화면에서 보이거나 보이지 않게 숨기는 설정을 하는 css속성 */
+        /* visible(기본값), hidden, collapse */
+        /* hidden: html태그를 화면에 보이지 않게 숨김 */
+        /* collapse: 표에서 사용 시 서로 겹치도록 설정/ 그 이외의 영역에서는 hidden과 동일한 효과 (- 잘안씀) */
+            /* 숨겨진 html태그의 영역은 그대로 존재함 */
+        /* opacity: 0.0과 비슷한 효과 - (투명한효과)랑 visibility hidden이랑 똑같 */
+        /* display: none과는 다른형태 */
+            /* display: none은 html태그의 영역이 존재하지 않음 */
+        #div01::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+        #div01 .box {
+            float: left;
+            width: 33%;
+            padding: 5px;
+            box-sizing: border-box;
+            
+        }
+        #div01 img { width: 100%;}
+        .invisible {
+            /* visibility: hidden; */
+            /* display: none; */ /*div영역을 잡아줘서 영역 있음 ,이미지 영역은 사라져있음 */
+            opacity: 0.0; 
+        }
+
+        /* z-index: html적층 구조를 설정하는 css속성 */
+        /* html태그는 먼저 입력된 순서부터 아래에 깔리는 형태 */
+        /* z-index를 사용 시 적층 레벨을 사용자가 직접 입력할 수 있음 */
+        /* 값은 정수를 사용 (0~ 999) */
+        /* 숫자가 클수록 상위에 올라감 */
+        #div02 {
+            width: 500px;
+            height: 500px;
+            background-color: darkcyan;
+            border: 2px solid black;
+            position: relative;
+        }
+        #div02 .box {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            
+        }
+        .red {
+            background-color: red;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .green {
+            background-color: green;
+            top: 50px;
+            left: 50px;
+            z-index: 7;
+        }
+        .blue {
+            background-color: blue;
+            top: 100px;
+            left: 100px;
+            z-index: 15;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div class="box">
+            <img src="./images/009.jpg" alt="" class="invisible">
+        </div>
+        <div class="box">
+            <img src="./images/010.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="./images/011.jpg" alt="">
+        </div>
+    </div>
+<hr><br>
+
+    <div id="div02">
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+</body>
+</html>

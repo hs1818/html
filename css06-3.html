@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>이미지 float연습</title>
+
+    <style>
+        /* #container  div {box-sizing: border-box;} */
+        #div01, #div02, #div03 {
+            width: 33%;
+            padding: 5px;
+            box-sizing: border-box;
+            float: left;
+        }
+        
+        
+        img { width: 100%;}
+        #container::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="div01">
+            <img src="./images/009.jpg" alt="" id="img1">
+        </div>
+        <div id="div02">
+            <img src="./images/010.jpg" alt="" id="img2">
+        </div>
+        <div id="div03">
+            <img src="./images/011.jpg" alt="" id="img3">
+        </div>    
+    </div>
+
+    <hr>
+
+    
+</body>
+</html>
+</div>

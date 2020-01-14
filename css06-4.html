@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6-3 센세답</title>
+    <style>
+        #div02::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+        /* #div02 div { box-sizing: border-box;} */
+        .box {
+            /* 한 라인의 크기에서 33%의 너비를 계산하여 너비를 적용 */
+            width: 33%;
+            float: left;
+            /* 너비와 높이의 크기를 테두리 선의 기준으로 하여 설정 */
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        /* 이미지의 너비를 부모태그의 너비와 동일하게 적용 */
+        img { width: 100%;}
+    </style>
+    
+</head>
+<body>
+    <div id="div02">
+        <div class="box">
+            <img src="./images/009.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="./images/010.jpg" alt="" >
+        </div>
+        <div class="box">
+            <img src="./images/011.jpg" alt="" >
+        </div>    
+    </div>
+</body>
+</html>
