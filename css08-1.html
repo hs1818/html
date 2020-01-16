@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css8일차 연습</title>
+
+    <style>
+        #container {
+            position: relative;
+            text-align: center;
+            margin-top: 30%;
+            margin-left: 30%;
+            
+        }
+        
+        h2 {
+            font-size: 2em;
+        }
+        h1 {
+            font-size: 3.5em;
+        }
+        a:link, a:visited {
+            text-decoration: none;
+            color: #222222;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+
+        #bg {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -100;
+
+        }
+    </style>
+</head>
+<body>
+    <video loop autoplay muted preload="auto" id="bg">
+        <source src="../media/Wildlife.mp4" type="video/mp4">
+        <source src="../media/Wildlife.ogv" type="video/ogv">
+        <source src="../media/Wildlife.webm" type="video/webm">
+    </video>
+    <div id="container">
+        <h2>사람을 구체적으로 도와주는 책</h2>
+        <h1><a href="">이즈스퍼블리싱</a></h1>
+    </div>
+</body>
+</html>

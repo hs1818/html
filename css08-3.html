@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css8일차 p425</title>
+
+    <style>
+        /* css선택자 추가사항 */
+        /* 자손선택자: 상위 요소와 하위 요소 사이에 공백 문자(' ')를 사용하는 선택자 */
+        /* 상위요소에 포함된 html요소를 뜻함(단계에 관계x) */
+        /* 하위요소로 사용할 수 있는 선택자는 태그, id, class 선택자 등 */
+        /* ex) selection p { color:blue;}  */
+
+        /* 자식선택자: 상위 요소에 포함된 요소 중 1단계 아래에 있는 html요소 */
+        /* ' > ' 를 사용함 */
+        /* 하위요소로 사용할 수 있는 선택자는 태그,id,class선택자 등 */
+        /* ex) selection > p {} */
+
+        /* 여기서부터 */
+        /* 인접 형제 선택자: 지정한 요소와 !동일한! 단계에 있는 html요소를 선택하는 선택자 */
+        /* ( + )기호를 사용하여 원하는 요소를 선택함 */
+        /* 같은 레벨이면서 요소 1이후에 맨 먼저 오는 요소2에 스타일 적용 */
+        /* ex) selection + p { color: blue;} */
+        h2 { color: red;}
+        h2 + p {color: blue;}
+        p + div{
+            background-color: chartreuse;
+            padding: 20px;
+        }
+
+        /* 형제 선택자: 인접 형제 선택자와 같이 !동일한! 단계에 있는 html태그 요소를 선택하는 선택자 */
+        /*  ( ~ )를 사용하고 첫번째 요소 다음에 모든 요소에 (순서에 상관x) */
+        /* ex) section ~ p { color: blue;} */
+        h1 ~ ul {
+            color: blue;
+            font-weight: bold;
+        }
+        p ~ ul {
+            background-color: green;
+        }
+
+        /* [속성] 선택자: 지정한 요소의 속성 확인하여 html요소를 선택하는 선택자 */
+        /* [ ]를 사용함 */
+        /* ex) a[href] {color: blue;} */
+        a[href] {
+            background-color: yellowgreen;
+        }
+        /* [속성=값]선택자: 특정 값을 갖는 속성에 스타일 적용 */
+        /* ex) a[target="_blank"] {color: blue;}*/
+        a[target="_blank"] {
+            text-decoration: none;
+            font-size: 20px;
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <p>ash</p>
+        <div>
+            <h2>지정할 html태그</h2>
+            <p>인접형제 선택자</p>
+            <p>ash</p>
+        </div>
+        <p class="p">ash</p>
+        <p>ash</p>
+    </div>
+    <hr>
+
+    <div id="div02">
+        <h1>형제선택자</h1>
+        <ul>
+            <li>앙</li>
+            <li>앙</li>
+        </ul>
+        <ul>
+            <li>앙</li>
+            <li>앙</li>
+            <li>앙</li>
+            <li>앙</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>div태그요소
+        <ul>
+            <li>앙</li>
+            <li>앙</li>
+            <li>앙</li>
+            <li>앙</li>
+        </ul>
+    <p>형제 선택자로 선택할 첫번째 태그요소</p>
+        <ul>
+            <li>앙</li>
+            <li>앙</li>
+            <li>앙</li>
+            <li>앙</li>
+        </ul>
+    <h2>형제 선택자로 선택되지 않을 태그요소</h2>
+        <ul>
+            <li>으잉</li>
+            <li>으잉</li>
+            <li>으잉</li>
+            <li>으잉</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div id="div03">
+        <ul>
+            <li><a>메인메뉴</a></li>
+            <li><a href="">메뉴1</a></li>
+            <li><a href="">메뉴2</a></li>
+            <li><a href="">메뉴3</a></li>
+        </ul>
+    </div>
+    <hr>
+
+    <div id="div04">
+        <h3>속성=값 선택자</h3>
+        <ul>
+            <li><a href="http://www.w3c.org/TR/html" target="_blank">html</a></li>
+            <li><a href="http://www.w3c.org/TR/html" >css selector level3</a></li>
+            <li><a href="http://www.w3c.org/TR/html" >미디어쿼리</a></li>
+        </ul>
+    </div>
+    <hr>
+
+    
+
+</body>
+</html>

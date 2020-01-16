@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css8 3번파일에서 이어짐 p431</title>
+
+    <style>
+        /* [속성~=값]선택자: 여러 값 중 특정값이 포함된 속성에 스타일 적용 */
+        /* 특정값이 포함되어 있으면 다 선택함 */
+        .flat {
+            background-color: blue;
+            color: white;
+        }
+        [class ~= "button"] {
+            border: 2px solid black;
+            box-shadow: rgba(0, 0, 0, 0.4) 5px 5px;
+        }
+
+        /* [속성 |=값]선택자: 특정 값이 포함된 속성에 스타일 적용 */
+        /* 지정한 문자열이 '문자열-' 포함되어 있으면 선택 */
+        a[title |="us"] { padding: 5px 25px;}
+        a[title |="jap"] {
+            padding: 5px 25px;
+            background: greenyellow;
+            }
+        
+        /* [속성 ^=값]선택자: 특정 값으로 시작하는 속성에 스타일 적용 */
+            a[title ^="eng"] {
+                background: hotpink;
+                padding: 5px 25px;
+            }
+            a[title ^="jap"] {
+                background: red;
+                padding: 5px 25px;
+            }
+            a[title ^="chi"] {
+                background: blue;
+                padding: 5px 25px;
+            }
+        /* [속성 $=값]선택자: 특정 값으로 끝나는 속성에 스타일 적용 */
+            a[href $="hwp"] {
+                background: brown;
+                padding: 5px;
+            }
+            a[href $="xls"] {
+                background: darkgoldenrod;
+                padding: 5px;
+            }
+            
+        /* [속성 *=값]선택자: 값의 일부가 일치하는 속성에 스타일 적용 */
+            [href *="w3"] {
+                background: gold;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <h3>[ ~= ]선택자</h3>
+    <ul>
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#" class="button">메뉴3</a></li>
+        <li><a href="#" class="flat button">메뉴4</a></li>
+    </ul>
+    <hr>
+
+    <h3>[l=]선택자</h3>
+    <ul>
+        <li>외국어서비스</li>
+        <li><a href="#" title="us">영어</a></li>
+        <li><a href="#" title="us-english">영어</a></li>
+        <li><a href="#" title="japanese">일본어</a></li>
+    </ul>
+    <hr>
+
+    <h3>[ ^= ]선택자</h3>
+    <ul>
+        <li><a href="#" title="english">영어</a></li>
+        <li><a href="#" title="japanese">일본어</a></li>
+        <li><a href="#" title="chinese">중국어</a></li>
+    </ul>
+    <hr>
+        
+    <h3>[ $ ]선택자</h3>
+        <ul>
+            <li><a href="intro.hwp">hwp파일</a></li>
+            <li><a href="intro.xls">xls파일</a></li>
+        </ul>
+    <hr>
+
+    <h3>[ *= ]선택자</h3>
+        <ul>
+            <li><a href="http://www.w3c.org/TR.html">html표준안 사이트</a></li>
+            <li><a href="http://www.webplatform.org">튜토리얼과 아티클</a></li>
+            <li><a href="http://caniuse.com">html지원여부 체크</a></li>
+            <li><a href="http://www.w3c.org/TR/css-mediaqueries">미디어쿼리</a></li>
+        </ul>
+</body>
+
+</html>

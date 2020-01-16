@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css8일차p394</title>
+
+    <style>
+    
+    </style>
+</head>
+<body>
+    <!-- html5에서 지원하는 미디어파일 -->
+    <!-- 오디오: mp3, ogg, wav파일 지원 -->
+        <!-- mp3: 대부분은 음원에서 사용되지만 라이선스 떄문에 유료 -->
+        <!-- ogg: mp3와 비슷한 형태음원 파일이지만 라이선스x -->
+        <!-- wav: 컴퓨터에서 사용하는 기본 음원파일, 음원 압축안되어 있음- 용량↑ -->
+    <!-- 비디오: mp4, ogv, webm -->
+        <!-- mp4: mp3와 동일한 파일이지만 영상을 지원하는 파일 -->
+        <!-- ogv: ogg파일에 영상이 추가된 형식의 파일 -->
+        <!-- webm: 웹 환경에서 영상 스트리밍을 위해서 개발된 파일 -->
+    <!-- 각 웹 브라우저마다 미디어를 지원하는 버전이 다르기 때문에 확인이 필요함 -->
+
+    <!-- <audio></audio>: html5에서 오디오 파일을 재생하기 위한 html태그 -->
+        <!-- autoplay: 오디오를 자동재생(최신 브라우저에서는 보안관련 사항으로 동작되지 않을 수 있음) -->
+        <!-- controls: 웹 화면에 오디오 컨트롤 패널을 출력 -->
+        <!-- loop: 연속재생 여부 -->
+        <!-- mute: 소리 끔 -->
+        <!-- preload: 재생버튼 클릭전에 미리 음원 파일 다운(auto, none, metdata) -->
+        <!-- src: 재생할 음원의 경로-잘안씀  
+            ( <source></source> 태그를 주로 사용- 다른 브라우저에 여러개 파일 지원파일올리려고 ) -->
+    <div>
+        <h3>audio 기본사용</h3>
+        <audio src="../media/Sleep Away.mp3" controls autoplay></audio>    
+    </div>    
+    <hr>
+    <!-- <source>: html5의 <video>, <audio>, <picture> 태그에서 사용할 
+        미디어 요소에 대한 여러개의 미디어 리소스를 지정하는데 사용하는 태그 -->
+    <!-- 웹 브라우저 지원하는 미디어 종류가 다르기 때문에 모든 환경에서 정상적으로 이용할 수 있도록 하기 위함 -->
+        <!-- src: video, audio등에서 사용할 미디어 파일의 경로 -->
+        <!-- type: 사용할 미디어의 파일 형식-->
+        <!-- srcset: picture에서 사용할 이미지 파일 경로-->
+        <!-- media: css에서 정의된 미디어 쿼리-->
+        <!-- sizes: 이미지의 크기설정-->
+        <!-- media sizes 잘안씀 -->
+    <div>
+        <h3>source태그를 사용한 audio사용</h3>
+        <audio loop controls preload="metadata">
+            <source src="../media/Sleep Away.ogg" type="audio/ogg">
+            <source src="../media/Sleep Away.mp3" type="audio/mp3">
+        </audio>
+        <br>
+        <audio  controls preload="none" muted>
+            <source src="../media/Sleep Away.ogg" type="audio/ogg">
+            <source src="../media/Sleep Away.mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <hr>
+    <!-- <video></video>: html5에서 video미디어를 출력하기 위한 html태그 -->
+    <!-- html5에서는 mp4, webm, ogv파일을 공식 지원함 -->
+    <!-- 웹 브라우저와 종류에 따라서 지원하지 않는 종류가 있어서 <source>태그를 사용하여 여러개의 미디어 파일지원 -->
+        <!-- autoplay: 미디어 파일 자동재생 -->
+        <!-- controls: 재생관련 컨트롤 패널출력 -->
+        <!-- loop: 지정한 미디어 파일연속재생 -->
+        <!-- muted: 재생 시 소리 끔 -->
+        <!-- preload: 웹 페이지 로딩 시 재생할 미디어 파일 미리로드(auto, metadata, none) -->
+        <!-- src: 재생할 미디어 파일경로 -->
+        <!-- width:  재생할 미디어 파일의 화면너비 설정 -->
+        <!-- height: 재생할 미디어 파일의 화면높이 설정 -->
+        <!-- poster: 재생할 미디어 파일의 스냅샷 이미지 -->
+    <div>
+        <h3>video 기본사용</h3>
+        <video src="../media/Wildlife.mp4" controls preload="metadata"></video>
+    </div>
+    <hr>
+
+    <div>
+        <h3>source를 사용한 video사용</h3>
+        <video controls autoplay loop preload="none" poster="../media/001.gif">
+            <source src="../media/Wildlife.webm" type="video/webm">
+            <source src="../media/Wildlife.ogv" type="video/ogv">
+            <source src="../media/Wildlife.mp4" type="video/mp4">
+        </video>
+    </div>
+    <hr>
+    <!-- youtube영상 사용하기 -->
+    <!-- <iframe>, <object>, <embed> 태그를 사용하여 youtube영상을 웹 페이지에 출력할 수 있음 -->
+    <!-- <!frame>: html에서 현제 웹 페이지에서 다른 웹페이지를 출력하기 위한 html태그 -->
+        <!-- html4에서도 지원하던 태그, html4에서 지원하던 속성 몇가지 제거 후 html5로 버전업 하면서 추가된 속성이 있음 -->
+        <!-- src: 불러올 웹 페이지의 경로-->
+        <!-- srcdoc: 볼러올 웹 페이지의 html코드-->
+        <!-- width: 외부 웹 페이지가 출력될 화면의 너비-->
+        <!-- height:          "            화면의 높이-->
+        <!-- sandbox: iframe컨텐츠의 추가 제한사항(allow-forms, allow-pointer-lock, allow-popup, 
+            allow-same-origin, allow-scripts, allow-top-navigation)-->
+
+        <!-- 유튜브 영상 사용 시 옵션  -->
+        <!-- 유튜브에서 지원하는 공유주소 입력 후 옵션을 입력 시 반드시 주소뒤에 ? 가 포함되야 함 -->
+        <!-- 옵션을 2개 이상 입력 시 옵션 사이에 & 가 있어야함 -->
+        <!-- autoplay: 영상 자동재생 (0= 자동재생x 1= 자동재생o), 이건 주소에 넣어줌 ?autoplay -->
+        <!-- mute: 음소거(자동 재생 시 반드시 필요한 옵션, 0 =소리재생, 1= 음소거) -->
+            <!-- iframe속성으로 allow를 사용하고 allow의 옵션으로 
+                accelerometer, autoplay, enctypted-media, picture-inpicture, gyroscope가 추가되어야 autoplay가 됨 -크롬에서 -->
+        <!-- loop: 영상 반복재생(0= 반복재생x 1= 반복재생o) -->
+            <!-- playlist: 영상을 반복 재생하기 위한 리스트 &playlist=주소-->
+        <!-- controls: 컨트롤 패널출력(0= 컨트롤 x 1 = 컨트롤패널 o - 기본값) -->
+        <!-- google유튜브 참조사이트: https://developers.google.com/youtube/player_parameters?h1=ko#Embedding_a_Player -->
+    <div>
+        <h3>video태그를 사용하여 youtube영상 출력하기</h3> <!--공유 퍼가기 -->
+        <iframe width="500" height="500" src="https://www.youtube.com/embed/CcvFpbh2fjE?autoplay=1&playlist=CcvFpbh2fjE&loop=1&controls=1&mute=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+
+    
+</body>
+</html>
