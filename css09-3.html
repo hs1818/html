@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p473 애니메이션</title>
+
+    <style>
+        /* css사용한 애니메이션 효과 */
+        /* css애니메이션은 css의 transition과 비슷한 형태를 가지고 있음 */
+        /* @keyframe을 미리 생성해 놓고 필요할 경우 가져다 사용하는 형태 */
+
+        /* @keyframes: 애니메이션 구간을 설정 */
+        /* 실제 애니메이션 효과를 생성하기 위해 시작지점과 종료지점을 설정 함수 */
+        /* @keyframes이름 {
+            선택자 { css스타일속성; }
+        } */
+        /* animation-name: 미리 생성된 애니메이션 이름설정*/
+        /* keyframe을 통해서 생성된 애니메이션 효과를 실제 적용시키기 위해 미리 생성된 keyframe의 이름을 설정 속성*/
+        #div01 div {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            -webkit-animation-name: change-bg;
+            -moz-animation-name: change-bg;
+            -o-animation-name: change-bg;
+            -ms-anination-name: change-bg;
+            animation-name: change-bg;
+            -webkit-animation-duration: 3s;
+            -moz-animation-duration: 3s;
+            -o-animation-duration: 3s;
+            -ms-animation-duration: 3s;
+            animation-duration: 3s;
+        }
+        @-webkit-keyframes change-bg {
+            from {
+                background: blue;
+                border: 1px solid black;
+            }
+            to {
+                background: #a5d6ff;
+                border: 1px solid blue;
+                border-radius: 50%;
+            }
+        }
+        @-moz-keyframes change-bg {
+            from {
+                background: blue;
+                border: 1px solid black;
+            }
+            to {
+                background: #a5d6ff;
+                border: 1px solid blue;
+                border-radius: 50%;
+            }
+        }
+        @-o-keyframes change-bg {
+            from {
+                background: blue;
+                border: 1px solid black;
+            }
+            to {
+                background: #a5d6ff;
+                border: 1px solid blue;
+                border-radius: 50%;
+            }
+        }
+        @-ms-keyframes change-bg {
+            from {
+                background: blue;
+                border: 1px solid black;
+            }
+            to {
+                background: #a5d6ff;
+                border: 1px solid blue;
+                border-radius: 50%;
+            }
+        }
+        @keyframes change-bg {
+            from {
+                background: blue;
+                border: 1px solid black;
+            }
+            to {
+                background: #a5d6ff;
+                border: 1px solid blue;
+                border-radius: 50%;
+            }
+        }
+        
+        /* animation-delay: 애니메이션 지연시간 설정*/
+        /* animation-direction: 애니메이션 종료 후 재실행 방법 설정 */
+        /* animation-duration: 애니메이션 실행시간 설정*/
+        /* animation-full-mode: 애니메이션이 실행되지 않는 상태일 경우 스타일 설정 */
+        /* animation-iteration-count: 애니메이션 반복 횟수*/
+        /* animation-play-state: 애니메이션 실행 or 정지*/
+        /* animation-timing-function: 애니메이션 실행속도 변경*/
+        /* animation: 애니메이션 다 한방에 */
+
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div></div>
+    </div>
+</body>
+</html>
