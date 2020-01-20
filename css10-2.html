@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p486 연습</title>
+
+    <style>
+        /* 문1) */
+        #div01 div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: green;
+        }
+        #div01 .box1 {
+            transition: ease-in-out 1s;
+            
+        }
+        #div01 .box1:hover {
+            background: yellow;
+        }
+        /* 문2 */
+        #div02 .img { border: 1px solid white;}
+        #div02 .img:hover {
+            transform: rotate(20deg);
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        /* 문3 */
+        #div03 {
+            width: 500px;
+            margin: 50px;
+        }
+        #div03 .img {
+            -webkit-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            -moz-transition: all 1s;
+            transition: all 1s ;
+        }
+        #div03 .img:hover {
+            transform: scale(1.5);
+            box-shadow: 5px 5px 3px black;
+            transform-origin: left top;
+        }
+    </style>    
+</head>
+<body>
+    <div id="div01">
+        <div class="box1"></div>
+    </div>
+    <hr><br>
+
+    <div id="div02">
+        <img src="./images/007.jpg" alt="" class="img">
+    </div>
+    <hr><br>
+
+    <div id="div03">
+        <img src="./images/007.jpg" alt="" class="img">
+    </div>
+    <br><br><br>
+    <br><br><br>
+</body>
+</html>

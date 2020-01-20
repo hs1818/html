@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p483 상품페이지</title>
+
+    <style>
+        .prod-list {
+            /* ul 표시 x로 변경 */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .prod-list li {
+            position: relative;
+            /* 기본적으로 li이기 때문에 각 리스트가 세로로 출력되어야 하지만
+            float사용해 왼쪽으로 붙임 */
+            float: left;
+            padding: 0;
+            margin: 10px;
+            /* 자손태그가 자신의 영역이상 컸을경우 화면에 출력하지 않음 
+                -> 화면밖에 나가는거 삭제  영역안에만 출력 */
+            overflow: hidden;
+        }
+        .prod-list img {
+            margin: 0;
+            padding: 0;
+            float: left;
+            z-index: 5;
+        }
+        .prod-list::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+        /* me */
+        .prod-list .caption {
+            position: absolute;
+            top: 200px;
+            padding-top: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            width: 300px;
+            height: 200px;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+            z-index: 10;
+        }
+        .prod-list li:hover .caption {   /* caption은 위에 opacity 0이라 1하려고 */
+            opacity: 1;
+            transform: translateY(-200px);
+        }
+        .prod-list .caption h1, .prod-list .caption p {
+            color: white;
+            text-align: center;
+        }
+        #container li {
+            float: left;
+            width: 29%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        #container img {width: 100%;}
+    </style>
+</head>
+<body>
+    <h1>신상품 목록 </h1>
+    <div id="container">
+        <ul class="prod-list">
+            <li>
+                <img src="./images/007.jpg" alt="" class="img">
+                <div class="caption">
+                    <h1>상품 1</h1>
+                    <p>상품 1 설명 텍스트</p>
+                    <p>가격 : 12,345원</p>
+                </div>
+            </li>
+            <li>
+                <img src="./images/008.jpg" alt="" class="img">
+                <div class="caption">
+                    <h1>상품 2</h1>
+                    <p>상품 2 설명 텍스트</p>
+                    <p>가격 : 12,345원</p>
+                </div>
+            </li>
+            <li>
+                <img src="./images/009.jpg" alt="" class="img">
+                <div class="caption">
+                    <h1>상품 3</h1>
+                    <p>상품 3 설명 텍스트</p>
+                    <p>가격 : 12,345원</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
