@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css11 p536</title>
+
+    <style>
+        /* flexbox 이전의 레이아웃 */
+        /* 테이블을 이용한 레이아웃 */
+        /* div를 이용한 레이아웃 */
+        /* 섹션을 기준으로 한 레이아웃 */
+            /* 문제점-> 디자이너가 모든 화면의 레이아웃을 결정해야함 */
+            /* 여러 웹 페이지를 개발 시 각각 다른 크기의 페이지가 만들어짐 */
+        
+        /* 웹 페이지의 레이아웃을 쉽게 구성하기 위해서 개발한 방법이 gridsystem, flexbox */
+        /* flexible box layout: flexbox를 여러개 이용해서 레이아웃을 구성하는 것 */
+        /* flexbox를 사용하려면 부모태그에 display: flex속성을 추가해야 함 */
+        .flex-container {
+            display: flex;
+            background: dodgerblue;
+        }
+        .flex-container > div {
+            background: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 32px;
+            text-align: center;
+            line-height: 75px;
+        }
+        /* 속성 */
+        /* flex-direction: 주측 플렉스 방향 지정*/
+            /* row(기본값): 왼쪽에서 오른쪽으로 flexbox배치 */
+            /* row-reverse: 오른쪽에서 왼쪽으로 배치*/
+            /* column: 위에서 아래로, 세로로 배치 */
+            /* column-reverse: 아래에서 위로, 새로로 배치*/
+        #div01 > .flex-container{
+            display: flex;
+            background: dodgerblue;
+            flex-direction: row;
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+        }
+        #div01 > .flex-container > div {
+            background: #f1f1f1;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 32px;
+            width: 100px;
+        }
+
+        /* flex-wrap: 플렉스 항목 줄바꿈 설정 */
+            /* no-wrap(기본값): 플렉스 박술을 한 줄에 표시 */
+            /* wrap: 플렉스 박스를 여러줄에 표시 */
+            /* wrap-reverse: 플렉스 박스를 여러줄에 표시 but) 반대로 배치 */
+        #div02 .flex-container {
+            display: flex;
+            background: dodgerblue;
+            /* flex-wrap: nowrap; */
+            flex-wrap: wrap;
+            /* flex-wrap: wrap-reverse; */
+        }
+
+        /* flex-flow: 플렉스 direction과 wrap 한꺼번에 지정*/
+        /* 순서는 direction, wrap */
+        #div03 .flex-container {
+            display: flex;
+            /* flex-flow: row wrap; */
+            flex-flow: row-reverse nowrap;
+            /* flex-flow: column-reverse wrap-reverse; */
+        }
+
+        /* justify-content: 주축 기준의 플렉스 박스 정렬설정*/
+            /* center: 중앙정렬 */
+            /* flex-start: 기본값, 왼쪽정렬 */
+            /* flex-end: 오른쪽 정렬 */
+            /* space-between: 첫번쨰랑 마지막 플렉스 항목 시작점 끝점에 배치 후 중앙항목을 같은 간격으로 배치 */
+            /* space-around: 모든 항목을 같은 간격으로 배치*/
+        #div04 .flex-container {
+            display: flex;
+            justify-content: start;
+            /* justify-content: space-between; */
+        }
+        
+        /* align-items: 교차축 기준의 배치 방법 설정*/
+            /* stretch(기본값): 플렉스 항목을 확장해 교차축을 꽉 채움*/
+            /* flex-start: 시작점 기준으로 배치*/
+            /* flex-end: 끝점을 기준으로 배치*/
+            /* center: 중앙을 기준으로 배치*/
+            /* baseline: 화면의 세로축 기준선에 태그를 배치( 각 태그의 크기에 상관x) */
+        #div05 .flex-container {
+            display: flex;
+            height: 400px;
+            /* align-items: flex-start; */
+            /* align-items: center; */
+            align-items: baseline;
+        }
+
+        /* align-content: 플렉스 박스가 여러줄일때 배치방법 설정*/
+            /* flex-wrap속성을 wrap나 wrap-reverse일때 사용 */
+        /* justify-content속성값 보기 */
+            /* flex-start, flex-end, center, space-between, space-around */
+        #div06 .flex-container {
+            display: flex;
+            height: 600px;
+            flex-wrap: wrap;
+            align-content: space-between;
+            /* align-content: center; */
+            /* align-content: space-around; */
+        }
+        /* 미디어 쿼리만 이해/ flex나온지 얼마안되서 잘안씀 */
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br><hr>
+
+    <div id="div01">
+        <h3>flex-direction사용하기</h3>
+        <div class="flex-container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+        </div>
+    </div>
+    <br><hr>
+
+    <div id="div02">
+        <h3>flex-wrap사용</h3>
+        <div class="flex-container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+            <div><h2>4</h2></div>
+            <div><h2>5</h2></div>
+            <div><h2>6</h2></div>
+            <div><h2>7</h2></div>
+            <div><h2>8</h2></div>
+            <div><h2>9</h2></div>
+            <div><h2>10</h2></div>
+            <div><h2>11</h2></div>
+            <div><h2>12</h2></div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="div03">
+        <h3>flex-flow사용</h3>
+        <div class="flex-container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+            <div><h2>4</h2></div>
+            <div><h2>5</h2></div>
+            <div><h2>6</h2></div>
+            <div><h2>7</h2></div>
+            <div><h2>8</h2></div>
+            <div><h2>9</h2></div>
+            <div><h2>10</h2></div>
+            <div><h2>11</h2></div>
+            <div><h2>12</h2></div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="div04">
+        <h3>justify-content사용</h3>
+        <div class="flex-container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+            <div><h2>4</h2></div>
+            <div><h2>5</h2></div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="div05">
+        <h3>align-items사용</h3>
+        <div class="flex-container">
+            <div><h1>1</h1></div>
+            <div><h3>2</h3></div>
+            <div><h5>3</h5></div>
+            <div><h2>4</h2></div>
+            <div><h6>5</h6></div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="div06">
+        <h3>align-content사용</h3>
+        <div class="flex-container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+            <div><h2>4</h2></div>
+            <div><h2>5</h2></div>
+            <div><h2>6</h2></div>
+            <div><h2>7</h2></div>
+            <div><h2>8</h2></div>
+            <div><h2>9</h2></div>
+            <div><h2>10</h2></div>
+            <div><h2>11</h2></div>
+            <div><h2>12</h2></div>
+        </div>
+    </div>
+</body>
+</html>
