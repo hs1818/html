@@ -14,7 +14,7 @@
             /* 문제점-> 디자이너가 모든 화면의 레이아웃을 결정해야함 */
             /* 여러 웹 페이지를 개발 시 각각 다른 크기의 페이지가 만들어짐 */
         
-        /* 웹 페이지의 레이아웃을 쉽게 구성하기 위해서 개발한 방법이 gridsystem, flexbox */
+        /* 웹 페이지의 레이아웃을 쉽게 구성하기 위해서 개발한 방법이 gridsystem, flexbox -floatleft문제 발생하니깐 이거 */
         /* flexible box layout: flexbox를 여러개 이용해서 레이아웃을 구성하는 것 */
         /* flexbox를 사용하려면 부모태그에 display: flex속성을 추가해야 함 */
         .flex-container {
@@ -50,7 +50,7 @@
             text-align: center;
             line-height: 75px;
             font-size: 32px;
-            width: 100px;
+            /* flex: 30%;  실험 */
         }
 
         /* flex-wrap: 플렉스 항목 줄바꿈 설정 */

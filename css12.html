@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css12</title>
+
+    <style>
+        /* 화면 너비에 따른 디바이스 -bootstrap참고 */
+        /* 992px이상: 고해상도 컴퓨터 모니터 */
+        /* 768px이상: 컴퓨터 화면  */
+        /* 576px이상: 태블릿 화면 */
+        /* 576px이하: 스마트폰 화면 */
+
+        body {
+            background-color: tan;
+            color: black;
+        }
+        /* 화면크기에 따라서 배경색상 변경하기 */
+        /* 컴터 */
+        @media screen and (max-width: 992px){
+            body {
+                background-color: yellowgreen;
+                color: darkgreen;
+            }
+        }
+        /* 태블릿 */
+        @media screen and (max-width: 768px){
+            body {
+                background-color: teal;
+                color: darkblue;
+            }
+        }
+        /* 스마트폰 */
+        @media screen and (max-width: 576px) {
+            body {
+                background: blue;
+                color: white;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>화면 너비에 따라 배경색상 변경</h1>
+    
+    <p>화면너비가 992px 이상이면 고해상도 컴터화면</p>
+    <p>화면너비가 768px 이상이면 컴터</p>
+    <p>화면너비가 768px 이하이면 태블릿</p>
+    <p>화면너비가 576px 이하이면 무조건 스마트폰화면</p>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>실전연습</title>
+
+    <style>
+        * { box-sizing: border-box; }
+        #div01 header {
+            background: purple;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        #div01 .leftside {
+            float: left;
+            width: 23%;
+            padding: 10px;
+        }
+        #div01 .leftside ul {
+            padding: 10px;
+            list-style-type: none;
+        }
+        #div01 .leftside li {
+            background: dodgerblue;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #div01 .leftside li:hover {
+            background: blue;
+        }
+        #div01 .content {
+            float: left;
+            width: 50%;
+        }
+        #div01 .rightside {
+            float: left;
+            width: 23%;
+            background: dodgerblue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-left: 5px;
+            margin-bottom: 20px;
+        }
+        #div01 main::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+        footer {
+            background: dodgerblue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media screen and (max-width: 576px) {
+            #div01 .leftside {
+                width: 98%;
+            }
+            #div01 .content {
+                width: 98%;
+                margin-bottom: 50px;
+            }
+            #div01 .rightside {
+                width: 98%;
+            }
+        }
+    </style>    
+</head>
+<body>
+    <div id="div01">
+        <header>
+            <h1>Chania</h1>
+        </header>
+
+        <main>
+            <aside class="leftside">
+                <ul>
+                    <li>The Flight</li>
+                    <li>The City</li>
+                    <li>The Island</li>
+                    <li>The Food</li>
+                </ul>
+            </aside>
+            <section class="content">
+                <h1>The City</h1>
+                <p>chania is the capital of the Chania region of the island of Crete. The city can be divided in two parts, 
+                    the old town and the mordern city.</p>
+            </section>
+            <aside class="rightside">
+                <h1>What?</h1>
+                <p>chania is a city on the island of crete.</p>
+                <h1>Where?</h1>
+                <p>crete is a chreck island in the mosdfsfd.</p>
+                <h1>How?</h1>
+                <p>you can reach Chania airport from all over Europe.</p>
+            </aside>
+        </main>
+
+        <footer>
+            <p>please the bannerwhitwletk jalksdjglaksdjlgkajwlek.</p>
+        </footer>
+    </div>
+</body>
+</html>
